@@ -5,6 +5,13 @@ terraform {
       version = "5.48.0"
     }
   }
+
+  backend "s3" {
+    bucket = "vijay-remote-state"
+    key    = "super-mario"
+    region = "us-east-1"
+    dynamodb_table = "vijay-remotestate-lock"
+  }
 }
 
 #provide authentication here
@@ -13,4 +20,4 @@ provider "aws" {
 }
 
 
-
+ 
