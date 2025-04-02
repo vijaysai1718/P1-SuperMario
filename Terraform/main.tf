@@ -33,6 +33,8 @@ data "aws_subnets" "public" {
     values = [data.aws_vpc.default.id]
   }
 }
+
+
 #cluster provision
 resource "aws_eks_cluster" "example" {
   name     = "EKS_CLOUD1"
@@ -40,8 +42,8 @@ resource "aws_eks_cluster" "example" {
 
   vpc_config {
    subnet_ids = [
-      aws_subnet.public[0].id,  # Ensure it's in a supported AZ (e.g., us-east-1a)
-      aws_subnet.public[1].id   # Ensure it's in a different supported AZ (e.g., us-east-1b)
+      aws_subnets.public[0].id,  # Ensure it's in a supported AZ (e.g., us-east-1a)
+      aws_subnets.public[1].id   # Ensure it's in a different supported AZ (e.g., us-east-1b)
     ]
   }
 
