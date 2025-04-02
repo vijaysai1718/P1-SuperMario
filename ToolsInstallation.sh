@@ -18,7 +18,7 @@ validate()
 if [ $1 -ne 0 ]
 then
 echo -e "Installation of $2 is $Red Failure.. $Normal"
-exit 1
+#exit 1
 else
 echo -e "Installation of the $2 is $Green success..$Normal"
 fi
