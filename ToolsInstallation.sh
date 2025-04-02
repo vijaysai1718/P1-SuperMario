@@ -1,9 +1,9 @@
 #!/bin/bash
 user=$(id -u) 
 
-Red="/e[31m"
-Green="/e[32m"
-Normal="/e[0m"
+Red="\e[31m"
+Green="\e[32m"
+Normal="\e[0m"
 
 
 if [ $user -ne 0 ]
