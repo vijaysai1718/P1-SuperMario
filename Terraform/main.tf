@@ -42,8 +42,8 @@ resource "aws_eks_cluster" "example" {
 
   vpc_config {
    subnet_ids = [
-      aws_subnets.public[0].id,  # Ensure it's in a supported AZ (e.g., us-east-1a)
-      aws_subnets.public[1].id   # Ensure it's in a different supported AZ (e.g., us-east-1b)
+      aws_subnets.public.ids[0],  # Ensure it's in a supported AZ (e.g., us-east-1a)
+      aws_subnets.public.ids[1]   # Ensure it's in a different supported AZ (e.g., us-east-1b)
     ]
   }
 
