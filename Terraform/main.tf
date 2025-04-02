@@ -49,7 +49,7 @@ resource "aws_eks_cluster" "example" {
   version = "1.30"
   
   vpc_config {
-     subnet_ids    = data.aws_subnets.public
+     subnet_ids    = data.aws_subnets.public.ids
 
   }
 
