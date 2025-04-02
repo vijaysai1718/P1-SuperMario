@@ -42,7 +42,7 @@ resource "aws_eks_cluster" "example" {
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
-     subnet_ids    = data.aws_subnets.default.ids
+     subnet_ids    = data.aws_subnets.public.ids
 
   }
 
