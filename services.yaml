@@ -7,8 +7,8 @@ spec:
  selector:
   app: supermario
   environment: QA
-ports:
- - portocol: tcp
-   port: 80
-   targetPort: 80
+ ports:
+  - portocol: tcp
+    port: 80
+    targetPort: 80
 
