@@ -40,7 +40,7 @@ data "aws_subnets" "public" {
 resource "aws_eks_cluster" "example" {
   name     = "EKS_CLOUD1"
   role_arn = aws_iam_role.example.arn
-  version = "v1.32"
+  version = "v1.30"
   vpc_config {
      subnet_ids    = data.aws_subnets.public.ids
 
