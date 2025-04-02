@@ -33,17 +33,23 @@ data "aws_subnets" "public" {
     values = [data.aws_vpc.default.id]
 
   }
+  filter {
+    name   = "availability-zone"
+    values = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1f"]
+  }
 }
 
 
 #cluster provision
 resource "aws_eks_cluster" "example" {
   name     = "EKS_CLOUD1"
-  role_arn = aws_iam_role.example.arn
+      role_arn = aws_iam_role.example.arn
+
+
   version = "1.30"
   
   vpc_config {
-     subnet_ids    = data.aws_subnets.public.ids
+     subnet_ids    = data.aws_subnets.public
 
   }
 
