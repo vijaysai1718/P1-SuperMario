@@ -41,6 +41,7 @@ resource "aws_eks_cluster" "example" {
   name     = "EKS_CLOUD1"
   role_arn = aws_iam_role.example.arn
   version = "1.30"
+  
   vpc_config {
      subnet_ids    = data.aws_subnets.public.ids
 
