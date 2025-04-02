@@ -8,7 +8,7 @@ spec:
   app: supermario
   environment: QA
  ports:
-  - portocol: TCP
+  - protocol: TCP
     port: 80
     targetPort: 80
 
