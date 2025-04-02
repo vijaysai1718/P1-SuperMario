@@ -15,7 +15,7 @@ echo "you are the super user installation will be inprogress"
 fi
 
 validate()
-if [$? -ne 0]
+if [ $1 -ne 0 ]
 then
 echo -e "Installation of $2 is $Red Failure.. $Normal"
 exit 1
