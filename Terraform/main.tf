@@ -22,22 +22,22 @@ resource "aws_iam_role_policy_attachment" "example-AmazonEKSClusterPolicy" {
   role       = aws_iam_role.example.name
 }
 
-#get vpc data
-data "aws_vpc" "default" {
-  default = true
-}
-#get public subnets for cluster
-data "aws_subnets" "public" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.default.id]
+# #get vpc data
+# data "aws_vpc" "default" {
+#   default = true
+# }
+# #get public subnets for cluster
+# data "aws_subnets" "public" {
+#   filter {
+#     name   = "vpc-id"
+#     values = [data.aws_vpc.default.id]
 
-  }
-  filter {
-    name   = "availability-zone"
-    values = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1f"]
-  }
-}
+#   }
+#   filter {
+#     name   = "availability-zone"
+#     values = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1f"]
+#   }
+# }
 
 
 #cluster provision
